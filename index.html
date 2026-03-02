@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hacker Portal AR</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <canvas id="matrix"></canvas>
+
+    <div class="wrapper" id="login-section">
+        <div class="login-box">
+            <div class="bot-container">
+                <img src="https://img.icons8.com/fluency/96/bot.png" alt="Robot" class="moving-bot">
+            </div>
+            <h2 class="neon-text">SYSTEM AUTHENTICATION</h2>
+            
+            <div class="input-group">
+                <input type="text" id="username" placeholder="ENTER NAME" autocomplete="off">
+            </div>
+
+            <div class="input-group password-container">
+                <input type="password" id="pin" placeholder="VERIFY PIN">
+                <span id="togglePassword" class="eye-icon">👁️</span>
+            </div>
+
+            <button onclick="verify()" class="login-btn">EXECUTE LOGIN</button>
+            <p id="status" class="system-msg">_WAITING_FOR_CREDENTIALS</p>
+        </div>
+    </div>
+
+    <div class="wrapper" id="success-page" style="display: none;">
+        <div class="success-box">
+            <h1 class="glitch" data-text="ACCESS GRANTED">ACCESS GRANTED</h1>
+            <div class="typing-container">
+                <p id="success-msg"></p>
+            </div>
+            <div class="loading-bar"><div class="progress"></div></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

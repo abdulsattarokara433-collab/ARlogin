@@ -1,0 +1,79 @@
+body, html {
+    margin: 0; padding: 0; width: 100%; height: 100%;
+    background-color: black; overflow: hidden;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#matrix { position: fixed; top: 0; left: 0; z-index: 1; }
+
+.wrapper {
+    position: relative; z-index: 2;
+    display: flex; justify-content: center; align-items: center;
+    height: 100vh; width: 100%;
+}
+
+.login-box, .success-box {
+    background: rgba(0, 0, 0, 0.9);
+    border: 2px solid #00ff00;
+    padding: 40px; border-radius: 15px;
+    text-align: center; width: 350px;
+    box-shadow: 0 0 30px #00ff00, inset 0 0 10px #00ff00;
+}
+
+/* Robot Animation */
+.moving-bot {
+    width: 80px; filter: drop-shadow(0 0 10px #00ff00);
+    animation: moveBot 3s ease-in-out infinite;
+}
+@keyframes moveBot {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-15px) rotate(5deg); }
+}
+
+.neon-text { color: #00ff00; text-shadow: 0 0 10px #00ff00; margin-bottom: 25px; }
+
+.input-group { margin-bottom: 20px; position: relative; }
+
+input {
+    width: 100%; background: transparent; border: 1px solid #00ff00;
+    color: #00ff00; padding: 12px; text-align: center;
+    outline: none; box-sizing: border-box;
+}
+
+/* Eye Icon Style */
+.password-container { position: relative; }
+.eye-icon {
+    position: absolute; right: 15px; top: 50%;
+    transform: translateY(-50%); cursor: pointer;
+    color: #00ff00; font-size: 1.2rem;
+}
+
+.login-btn {
+    width: 100%; padding: 12px; background: #00ff00; color: black;
+    font-weight: bold; border: none; cursor: pointer;
+    box-shadow: 0 0 15px #00ff00; transition: 0.3s;
+}
+.login-btn:hover { background: #00cc00; transform: scale(1.02); }
+
+/* Success Animations */
+.glitch {
+    font-size: 2.2rem; color: #00ff00;
+    text-shadow: 2px 0 red, -2px 0 cyan;
+    animation: glitchAnim 0.3s infinite;
+}
+@keyframes glitchAnim {
+    0% { transform: translate(0); }
+    20% { transform: translate(-2px, 2px); }
+    40% { transform: translate(-2px, -2px); }
+    60% { transform: translate(2px, 2px); }
+    80% { transform: translate(2px, -2px); }
+    100% { transform: translate(0); }
+}
+
+.typing-container { color: #00ff00; margin: 25px 0; min-height: 50px; line-height: 1.5; }
+
+.loading-bar { width: 100%; height: 5px; background: #111; border: 1px solid #00ff00; }
+.progress { width: 0%; height: 100%; background: #00ff00; animation: loadBar 3s forwards; }
+@keyframes loadBar { to { width: 100%; } }
+
+.system-msg { color: #00ff00; font-size: 11px; margin-top: 15px; opacity: 0.8; }
